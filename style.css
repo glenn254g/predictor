@@ -1,25 +1,33 @@
 :root{
   --bg: #ffffff;
   --phone-bg: #111111;
-  --accent-red: #c0392b;    /* red used for brand box & accents */
-  --accent-deep: #e74c3c;   /* slightly lighter red */
-  --accent-orange: #ff6b2f; /* update box */
+  --accent-red: #c0392b;
+  --accent-deep: #e74c3c;
+  --accent-orange: #ff6b2f;
   --muted: #f4f4f4;
   --text-dark: #222;
   --circle-border: #c0392b;
 }
 
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:var(--muted);display:flex;align-items:center;justify-content:center;}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:var(--muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
 .phone{
   width:360px;
   height:780px;
-  background:linear-gradient(180deg, #fafafa 0%, #fff 100%);
+  background:#ffffff;
   border-radius:28px;
   box-shadow:0 20px 60px rgba(0,0,0,0.18);
   overflow:hidden;
-  border:6px solid #000;
+  border:5px solid #000;
   display:flex;
   flex-direction:column;
 }
@@ -29,12 +37,9 @@ html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, san
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative;
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
 }
-.time{ font-size:14px;color:#333; font-weight:600; letter-spacing:0.4px;}
+.time{ font-size:14px;font-weight:600; }
 
-/* Main screen */
 .screen{
   padding:18px;
   flex:1;
@@ -43,7 +48,6 @@ html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, san
   align-items:center;
 }
 
-/* brand box */
 .brand-box{
   width:92%;
   background:var(--accent-red);
@@ -52,17 +56,15 @@ html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, san
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 6px 16px rgba(192,57,43,0.18) inset;
   margin-bottom:18px;
 }
 .brand-text{
   color:#fff;
   font-weight:800;
   font-size:16px;
-  letter-spacing:0.6px;
 }
 
-/* jet */
+/* Flying jet animation */
 .jet-area{
   width:92%;
   height:110px;
@@ -71,9 +73,18 @@ html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, san
   justify-content:center;
   margin-bottom:12px;
 }
-.jet{ width:60%; height:auto; }
+.jet{
+  width:58%;
+}
+.jet-fly{
+  animation:fly 3s infinite ease-in-out;
+}
+@keyframes fly {
+  0% { transform:translateX(-8px) translateY(2px); }
+  50%{ transform:translateX(8px) translateY(-2px); }
+  100%{ transform:translateX(-8px) translateY(2px); }
+}
 
-/* update box */
 .update-box{
   width:70%;
   background:var(--accent-orange);
@@ -82,21 +93,18 @@ html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, san
   text-align:center;
   padding:10px 12px;
   border-radius:8px;
-  letter-spacing:0.6px;
   margin-bottom:24px;
-  box-shadow:0 6px 10px rgba(255,107,47,0.12);
 }
 
-/* odds circle & controls */
 .odds-wrap{
   width:100%;
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:16px;
-  margin-top:10px;
 }
 
+/* Prediction circle */
 .odds-circle{
   width:260px;
   height:260px;
@@ -105,42 +113,45 @@ html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, san
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  flex-direction:column;
+  position:relative;
+}
+
+.predict-time{
+  position:absolute;
+  top:30%;
+  font-size:18px;
+  font-weight:700;
+  color:#111;
 }
 
 .odds-value{
   font-size:44px;
   font-weight:800;
   color:var(--accent-deep);
-  letter-spacing:1px;
+  margin-top:30px;
 }
 
-/* spinner */
-.spinner{ width:46px; height:46px; display:none; align-items:center; justify-content:center; }
+.spinner{
+  width:46px;height:46px;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
 .spinner .ring{
-  width:38px; height:38px; border-radius:50%;
+  width:38px;height:38px;
+  border-radius:50%;
   border:4px solid rgba(0,0,0,0.08);
   border-top-color:var(--accent-red);
   animation:spin 1s linear infinite;
 }
-@keyframes spin{ to{ transform:rotate(360deg); } }
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* Next button */
 .next-btn{
   background:#fff;
   border:1px solid rgba(0,0,0,0.06);
   padding:12px 20px;
   border-radius:8px;
   font-weight:700;
-  letter-spacing:0.6px;
   cursor:pointer;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
-}
-.next-btn:active{ transform:translateY(1px); }
-
-@media (max-width:420px){
-  .phone{ width:340px; height:760px; }
-  .odds-circle{ width:220px; height:220px; }
-  .odds-value{ font-size:36px; }
 }
