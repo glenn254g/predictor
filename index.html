@@ -1,1 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Betfity Predictor v7.01.01</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="phone">
+    <header class="topbar">
+      <div class="time" id="timeDisplay">--:--</div>
+    </header>
 
+    <main class="screen">
+      <div class="brand-box">
+        <span class="brand-text">Betfity Predictor v7.01.01</span>
+      </div>
+
+      <div class="jet-area">
+        <!-- Simple SVG jet with red accent similar to screenshot -->
+        <svg viewBox="0 0 200 80" class="jet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g transform="translate(0,5)">
+            <path d="M10 45 L60 30 L120 20 L160 18 L190 30 L140 40 L100 50 L50 60 Z" fill="#f6f6f6" stroke="#c0392b" stroke-width="2"></path>
+            <path d="M60 30 L45 36 L60 40 Z" fill="#c0392b"></path>
+            <rect x="120" y="14" width="28" height="10" rx="3" fill="#c0392b"></rect>
+            <circle cx="28" cy="58" r="3" fill="#c0392b"></circle>
+            <path d="M155 20 L170 10 L178 12 L162 24 Z" fill="#c0392b"></path>
+          </g>
+        </svg>
+      </div>
+
+      <div class="update-box">
+        UPDATE/25
+      </div>
+
+      <div class="odds-wrap">
+        <div class="odds-circle" id="oddsCircle" aria-live="polite">
+          <div class="odds-value" id="oddsValue">--.--x</div>
+        </div>
+
+        <div class="spinner" id="spinner" aria-hidden="true">
+          <div class="ring"></div>
+        </div>
+
+        <button id="nextBtn" class="next-btn">NEXT GAME</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
