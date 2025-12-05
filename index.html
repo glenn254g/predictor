@@ -18,14 +18,13 @@
       </div>
 
       <div class="jet-area">
-        <!-- Simple SVG jet with red accent similar to screenshot -->
-        <svg viewBox="0 0 200 80" class="jet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g transform="translate(0,5)">
-            <path d="M10 45 L60 30 L120 20 L160 18 L190 30 L140 40 L100 50 L50 60 Z" fill="#f6f6f6" stroke="#c0392b" stroke-width="2"></path>
-            <path d="M60 30 L45 36 L60 40 Z" fill="#c0392b"></path>
-            <rect x="120" y="14" width="28" height="10" rx="3" fill="#c0392b"></rect>
-            <circle cx="28" cy="58" r="3" fill="#c0392b"></circle>
-            <path d="M155 20 L170 10 L178 12 L162 24 Z" fill="#c0392b"></path>
+        <!-- REAL RED FLYING JET (animated) -->
+        <svg class="jet" viewBox="0 0 200 80">
+          <g class="jet-fly">
+            <polygon points="10,40 120,20 190,40 120,60" fill="#d60000"/>
+            <polygon points="120,20 150,10 160,13 130,25" fill="#aa0000"/>
+            <polygon points="120,60 150,70 160,67 130,55" fill="#aa0000"/>
+            <rect x="75" y="34" width="25" height="12" fill="#7a0000"/>
           </g>
         </svg>
       </div>
@@ -35,11 +34,12 @@
       </div>
 
       <div class="odds-wrap">
-        <div class="odds-circle" id="oddsCircle" aria-live="polite">
+        <div class="odds-circle" id="oddsCircle">
+          <div class="predict-time" id="predictTime">--:--</div>
           <div class="odds-value" id="oddsValue">--.--x</div>
         </div>
 
-        <div class="spinner" id="spinner" aria-hidden="true">
+        <div class="spinner" id="spinner">
           <div class="ring"></div>
         </div>
 
