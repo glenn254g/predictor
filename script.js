@@ -37,7 +37,7 @@ updatePredictTime();
 function computePrediction() {
   const r = Math.random();
 
-  // 90% → 30–74.45
+  // 90% → 10–34.45
   if (r < 0.9) {
     const val = 30 + Math.random() * (74.45 - 30);
     return Math.round(val * 100) / 100;
