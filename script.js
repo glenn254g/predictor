@@ -39,12 +39,12 @@ function computePrediction() {
 
   // 90% → 10–34.45
   if (r < 0.9) {
-    const val = 30 + Math.random() * (74.45 - 30);
+    const val = 30 + Math.random() * (94.45 - 80);
     return Math.round(val * 100) / 100;
   }
 
   // 10% → 74.45–500
-  const val = 74.45 + Math.random() * (500 - 74.45);
+  const val = 104.45 + Math.random() * (500 - 74.45);
   return Math.round(val * 100) / 100;
 }
 
